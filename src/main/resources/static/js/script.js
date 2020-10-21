@@ -1,0 +1,1 @@
+console.log("inisde js file");
