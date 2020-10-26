@@ -13,13 +13,18 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 
-<title th:text="${tittle}">Base html</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+	integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+	crossorigin="anonymous" />
+
+<title th:text="${title}">Base html</title>
 <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 <body>
 
 	<!-- navbar -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	<nav class=" fixed-top navbar navbar-expand-lg navbar-dark bg-primary">
 		<a class="navbar-brand" href="#">Smart Contact Manager</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarSupportedContent"
@@ -47,7 +52,36 @@
 		</div>
 	</nav>
 	<!-- End Navbar -->
-	<div th:replace="${content}"></div>
+
+
+	<!-- start sidebar -->
+
+	<div class="sidebar mt-2">
+
+		<span onclick="toggleSidebar()" class="crossBtn">&times;</span> <a
+			href="#" th:href="@{/}" class="item"><i class="fas fa-home"></i>
+			Home </a> <a href="#" class="item"><i class="fas fa-id-card-alt"></i>
+			View Contacts</a> <a href="#" th:href="@{/user/add-contact}" class="item"><i
+			class="fas fa-pencil-alt"></i> Add Contact</a> <a href="#" class="item"><i
+			class="fas fa-user-circle"></i> Your Profile</a> <a href="#" class="item"><i
+			class="fas fa-cogs"></i> Setting</a> <a href="#" th:href="@{/logout}"
+			class="item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+
+		<div class="divider"></div>
+
+	</div>
+
+	<!-- End sidebar -->
+
+	<!-- Start content -->
+	<div class="content mt-5">
+
+		<i onclick="toggleSidebar()" class="fas fa-bars m-3"></i>
+
+		<div th:replace="${content}"></div>
+	</div>
+
+	<!-- End content -->
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

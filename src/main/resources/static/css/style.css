@@ -36,3 +36,57 @@ body {
 	{
 	margin-top: -85px;
 }
+
+/* @media only screen and (max-width: 600px) {
+	.sidebar {
+		display: none;
+		width: 80% !important;
+		height: 100%;
+		background: white;
+		height: 100vh;
+		padding-top: 20px;
+		position: fixed;
+	}
+	.content {
+		margin-left: 0% !important;
+	}
+} */
+.sidebar {
+	width: 18%;
+	height: 100%;
+	background: white;
+	padding-top: 45px;
+	position: fixed;
+	z-index: 99999999999999999999999999999;
+}
+
+.sidebar a {
+	text-decoration: none;
+	width: 100%;
+	display: block;
+	color: gray;
+	padding: 10px 25px;
+}
+
+.sidebar a:hover {
+	background: #e2e2e2;
+}
+
+.sidebar .divider {
+	width: 100%;
+	height: .5px;
+	background: #e2e2e2;
+	margin-top: 10px;
+}
+
+.content {
+	margin-left: 20%;
+}
+
+.sidebar .crossBtn {
+	position: absolute;
+	top: 0px;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
