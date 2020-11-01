@@ -10,7 +10,6 @@
 
 		<div class="card mr-3 ml-3">
 
-
 			<div class="card-body">
 
 
@@ -37,12 +36,9 @@
 											<i class="fa fa-plus"></i>
 
 										</div>
-
 									</div>
-
-									<input type="text" id="FirstName" ,name="name"
-										, placeholder="Enter Name Here" ,class="form-control" />
-
+									<input type="text" id="FirstName" name="name"
+										placeholder="Enter Name Here" class="form-control" />
 								</div>
 
 								<!-- Second Name -->
@@ -59,8 +55,8 @@
 
 									</div>
 
-									<input type="text" id="secondName" ,name="secondName"
-										, placeholder="Enter NickName Here" ,class="form-control" />
+									<input type="text" id="secondName" name="secondName"
+										placeholder="Enter NickName Here" class="form-control" />
 
 								</div>
 
@@ -74,9 +70,8 @@
 
 									</div>
 
-									<input type="email" id="email" ,name=email
-										, placeholder="Enter Email Here" ,class="form-control" />
-
+									<input type="email" id="email" name=email
+										placeholder="Enter Email Here" class="form-control" />
 								</div>
 
 								<!-- Phone Name -->
@@ -90,12 +85,9 @@
 											<i class="fa fa-phone"></i>
 
 										</div>
-
 									</div>
-
-									<input type="number" id="phone" ,name=phone
-										, placeholder="Enter phone Here" ,class="form-control" />
-
+									<input type="number" id="phone" name=phone
+										placeholder="Enter phone Here" class="form-control" />
 								</div>
 
 								<!-- Work Name -->
@@ -109,19 +101,16 @@
 											<i class="fa fa-briefcase"></i>
 
 										</div>
-
 									</div>
-
-									<input type="number" id="work" ,name=work
-										, placeholder="Enter Work Here" ,class="form-control" />
-
+									<input type="text" id="work" name=work
+										placeholder="Enter Work Here" class="form-control" />
 								</div>
 
 								<!-- Description -->
 
 								<div class="form-group mt-3">
 
-									<textarea name="description" id="description" rows="5"
+									<textarea name="description" id="mytextarea" rows="5"
 										class="form-control" placeholder="Enter Contact description"></textarea>
 
 								</div>
@@ -131,7 +120,6 @@
 								<div class="custom-file">
 
 									<input type="file" name="profileImage" />
-
 								</div>
 
 								<div class="container text-center">
@@ -152,6 +140,15 @@
 
 		</div>
 
+		<script
+			src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
+			referrerpolicy="origin"></script>
+
+		<script>
+			tinymce.init({
+				selector : '#mytextarea'
+			});
+		</script>
 	</section>
 </body>
 </html>
