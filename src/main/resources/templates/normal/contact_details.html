@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title>This is home page</title>
+</head>
+<body>
+	<section>
+
+		<div class="card mr-3 ml-3" th:if="${contact}">
+
+			<div class="card-body">
+
+				<div class="container text-center">
+
+					<img src="" style="width: 200px; height: 200px;"
+						alt="Profile Picture" class="my_profile_picture"
+						th:src="@{'/img/'+${contact.image}}" />
+
+					<h3>
+						<span th:text="${contact.name}"></span> (<span
+							th:text="${contact.secondName}"></span>)
+					</h3>
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">#ID</th>
+								<th scope="col">SCMUSER<span th:text="${contact.cId}"></span></th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr>
+								<th scope="row">Email</th>
+								<td th:text="${contact.email}">Mark</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Phone</th>
+								<td th:text="${contact.phone}">Mark</td>
+							</tr>
+
+							<tr>
+								<th scope="row">Work</th>
+								<td th:text="${contact.work}">Mark</td>
+							</tr>
+
+
+						</tbody>
+					</table>
+
+					<div class="descriptio">
+
+						<th:block th:text="${contact.description}"></th:block>
+
+					</div>
+
+					<div class="container mt-3">
+
+						<button class="btn btn-danger btn-sm btn-block">Delete</button>
+						<button class="btn btn-primary btn-sm btn-block">Update</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<h1 th:unless="${contact}"
+			class="text-center bg-danger text-white p-3 mr-3 ml-3">You don't
+			have permission to see this contact...</h1>
+
+	</section>
+</body>
+</html>
