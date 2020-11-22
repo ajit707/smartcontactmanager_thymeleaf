@@ -114,7 +114,7 @@ public class UserController {
 		String name = principal.getName();
 		User user = userRepository.getUserByUserName(name);
 
-		Pageable pageable = PageRequest.of(numberOfPage, 2);
+		Pageable pageable = PageRequest.of(numberOfPage, 5);
 
 		Page<Contact> contacts = contactRepository.findContactsByUser(user.getId(), pageable);
 
@@ -222,6 +222,17 @@ public class UserController {
 		}
 
 		return "redirect:/user/" + contact.getcId() + "/contact";
+	}
+
+	// User profile
+	@GetMapping("/profile")
+	public String userProfile(Model m, Principal principal) {
+		m.addAttribute("title", "Profile Page");
+
+		User user = userRepository.getUserByUserName(principal.getName());
+		m.addAttribute("user", user);
+
+		return "normal/profile";
 	}
 
 }
